@@ -54,6 +54,7 @@
 		B0BF11AE1C1F523C00B69F6E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0BF11B01C1F544000B69F6E /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		B0BF11B21C1F54AB00B69F6E /* Thumbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbs.swift; sourceTree = "<group>"; };
+		B0BF11B41C1F560800B69F6E /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		B0BF11B61C1F7B1A00B69F6E /* ChannelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +274,7 @@
 				B0BF11B51C1F560800B69F6E /* Either.swift in Sources */,
 				B0BF11B71C1F7B1A00B69F6E /* ChannelsTableViewController.swift in Sources */,
 				B0BF11AF1C1F523C00B69F6E /* Constants.swift in Sources */,
+				B0BF11B31C1F54AB00B69F6E /* Thumbs.swift in Sources */,
 				B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */,
 				B0BF11811C1F518600B69F6E /* SecondViewController.swift in Sources */,
 				B0BF117D1C1F518600B69F6E /* AppDelegate.swift in Sources */,
