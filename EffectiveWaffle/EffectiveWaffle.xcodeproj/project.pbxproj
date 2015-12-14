@@ -17,6 +17,9 @@
 		B0BF11AD1C1F51C900B69F6E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11AC1C1F51C900B69F6E /* APIClient.swift */; };
 		B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11B01C1F544000B69F6E /* Channel.swift */; };
 		B0BF11B71C1F7B1A00B69F6E /* ChannelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11B61C1F7B1A00B69F6E /* ChannelsTableViewController.swift */; };
+		B0BF11B81C1F8A2600B69F6E /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11B41C1F560800B69F6E /* Either.swift */; };
+		B0BF11B91C1F8A4000B69F6E /* Thumbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11B21C1F54AB00B69F6E /* Thumbs.swift */; };
+		B0BF11BA1C1F8A4900B69F6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11AE1C1F523C00B69F6E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,14 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BF11B51C1F560800B69F6E /* Either.swift in Sources */,
 				B0BF11B71C1F7B1A00B69F6E /* ChannelsTableViewController.swift in Sources */,
-				B0BF11AF1C1F523C00B69F6E /* Constants.swift in Sources */,
-				B0BF11B31C1F54AB00B69F6E /* Thumbs.swift in Sources */,
+				B0BF11B91C1F8A4000B69F6E /* Thumbs.swift in Sources */,
 				B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */,
 				B0BF11811C1F518600B69F6E /* SecondViewController.swift in Sources */,
 				B0BF117D1C1F518600B69F6E /* AppDelegate.swift in Sources */,
+				B0BF11B81C1F8A2600B69F6E /* Either.swift in Sources */,
 				B0BF11AD1C1F51C900B69F6E /* APIClient.swift in Sources */,
+				B0BF11BA1C1F8A4900B69F6E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +508,7 @@
 				B0BF11A51C1F518600B69F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0BF11A61C1F518600B69F6E /* Build configuration list for PBXNativeTarget "EffectiveWaffleTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +517,7 @@
 				B0BF11A81C1F518600B69F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0BF11A91C1F518600B69F6E /* Build configuration list for PBXNativeTarget "EffectiveWaffleUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +526,7 @@
 				B0BF11AB1C1F518600B69F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
