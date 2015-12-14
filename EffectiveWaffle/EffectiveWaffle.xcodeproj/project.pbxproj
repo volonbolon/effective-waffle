@@ -14,6 +14,7 @@
 		B0BF11891C1F518600B69F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BF11871C1F518600B69F6E /* LaunchScreen.storyboard */; };
 		B0BF11941C1F518600B69F6E /* EffectiveWaffleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11931C1F518600B69F6E /* EffectiveWaffleTests.swift */; };
 		B0BF119F1C1F518600B69F6E /* EffectiveWaffleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF119E1C1F518600B69F6E /* EffectiveWaffleUITests.swift */; };
+		B0BF11AD1C1F51C900B69F6E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11AC1C1F51C900B69F6E /* APIClient.swift */; };
 		B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11B01C1F544000B69F6E /* Channel.swift */; };
 		B0BF11B71C1F7B1A00B69F6E /* ChannelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11B61C1F7B1A00B69F6E /* ChannelsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		B0BF119A1C1F518600B69F6E /* EffectiveWaffleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectiveWaffleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BF119E1C1F518600B69F6E /* EffectiveWaffleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveWaffleUITests.swift; sourceTree = "<group>"; };
 		B0BF11A01C1F518600B69F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0BF11AC1C1F51C900B69F6E /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B0BF11AE1C1F523C00B69F6E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0BF11B01C1F544000B69F6E /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		B0BF11B61C1F7B1A00B69F6E /* ChannelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				B0BF11851C1F518600B69F6E /* Assets.xcassets */,
 				B0BF11871C1F518600B69F6E /* LaunchScreen.storyboard */,
 				B0BF118A1C1F518600B69F6E /* Info.plist */,
+				B0BF11AC1C1F51C900B69F6E /* APIClient.swift */,
 				B0BF11AE1C1F523C00B69F6E /* Constants.swift */,
 				B0BF11B01C1F544000B69F6E /* Channel.swift */,
 				B0BF11B61C1F7B1A00B69F6E /* ChannelsTableViewController.swift */,
@@ -269,6 +272,7 @@
 				B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */,
 				B0BF11811C1F518600B69F6E /* SecondViewController.swift in Sources */,
 				B0BF117D1C1F518600B69F6E /* AppDelegate.swift in Sources */,
+				B0BF11AD1C1F51C900B69F6E /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
