@@ -50,7 +50,10 @@ class ChannelsTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let segueIdentifier = segue.identifier
+        if segueIdentifier == Constants.SegueIdentifier.ShowPlaylist {
+            let destination = segue.destinationViewController as! PlaylistTableViewController
+            destination.channel = self.selectedChannel
+        }
     }
 }
