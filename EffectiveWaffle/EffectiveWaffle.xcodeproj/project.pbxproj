@@ -15,6 +15,7 @@
 		B0BF11891C1F518600B69F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BF11871C1F518600B69F6E /* LaunchScreen.storyboard */; };
 		B0BF11941C1F518600B69F6E /* EffectiveWaffleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11931C1F518600B69F6E /* EffectiveWaffleTests.swift */; };
 		B0BF119F1C1F518600B69F6E /* EffectiveWaffleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF119E1C1F518600B69F6E /* EffectiveWaffleUITests.swift */; };
+		B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11B01C1F544000B69F6E /* Channel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B0BF119A1C1F518600B69F6E /* EffectiveWaffleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectiveWaffleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BF119E1C1F518600B69F6E /* EffectiveWaffleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveWaffleUITests.swift; sourceTree = "<group>"; };
 		B0BF11A01C1F518600B69F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0BF11B01C1F544000B69F6E /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B0BF11851C1F518600B69F6E /* Assets.xcassets */,
 				B0BF11871C1F518600B69F6E /* LaunchScreen.storyboard */,
 				B0BF118A1C1F518600B69F6E /* Info.plist */,
+				B0BF11B01C1F544000B69F6E /* Channel.swift */,
 			);
 			path = EffectiveWaffle;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */,
 				B0BF11811C1F518600B69F6E /* SecondViewController.swift in Sources */,
 				B0BF117D1C1F518600B69F6E /* AppDelegate.swift in Sources */,
 				B0BF117F1C1F518600B69F6E /* FirstViewController.swift in Sources */,
