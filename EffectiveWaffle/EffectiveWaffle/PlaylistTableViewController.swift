@@ -8,12 +8,30 @@
 
 import UIKit
 
+class PlaylistCell: UITableViewCell {
+    @IBOutlet weak var videoThumb: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+}
+
 class PlaylistTableViewController: UITableViewController {
     var channel:Channel!
+    private let apiClient = APIClient()
+    var videos:[Video] = Array()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 80.0
         self.title = self.channel.name
+        self.apiClient.getVideos(self.channel.playlistId) { (e:Either<[Video], APIClientError>) -> Void in
+            switch e {
+            case .Left(let videos):
+                self.videos = videos
+                self.tableView.reloadData()
+            case .Right:
+                break
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,25 +41,37 @@ class PlaylistTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.videos.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("PlaylistCell", forIndexPath: indexPath) as! PlaylistCell
 
-        // Configure the cell...
+        let video = self.videos[indexPath.row]
+        
+        cell.titleLabel.text = video.name
+        cell.infoLabel.text = video.videoInfo
 
+        let request = NSURLRequest(URL: video.thumbs.first!.url)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request, completionHandler: { (d:NSData?, r:NSURLResponse?, e:NSError?) -> Void in
+            if d != nil {
+                if let image = UIImage(data:d!) {
+                    let queue = NSOperationQueue.mainQueue()
+                    queue.addOperationWithBlock({ () -> Void in
+                        if let cu = self.tableView.cellForRowAtIndexPath(indexPath) as? PlaylistCell {
+                            cu.videoThumb.image = image
+                        }
+                    })
+                }
+            }
+        })
+        task.resume()
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

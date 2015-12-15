@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Channels Table View Controller-->
@@ -46,13 +47,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistCell" id="6Oa-iS-rDs">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistCell" rowHeight="80" id="6Oa-iS-rDs" customClass="PlaylistCell" customModule="EffectiveWaffle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Oa-iS-rDs" id="njs-SW-nxN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CFS-8N-Lr1">
+                                            <rect key="frame" x="5" y="5" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="Oxc-rh-OuO"/>
+                                                <constraint firstAttribute="height" constant="70" id="t7E-fF-IJh"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG5-3s-huB">
+                                            <rect key="frame" x="83" y="5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mr-I6-eIU">
+                                            <rect key="frame" x="83" y="60" width="42" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gG5-3s-huB" firstAttribute="leading" secondItem="CFS-8N-Lr1" secondAttribute="trailing" constant="8" id="9OR-pA-LOf"/>
+                                        <constraint firstItem="CFS-8N-Lr1" firstAttribute="leading" secondItem="njs-SW-nxN" secondAttribute="leading" constant="5" id="GpI-sz-ElY"/>
+                                        <constraint firstItem="8mr-I6-eIU" firstAttribute="leading" secondItem="CFS-8N-Lr1" secondAttribute="trailing" constant="8" id="X2X-Wq-iCR"/>
+                                        <constraint firstItem="8mr-I6-eIU" firstAttribute="bottom" secondItem="CFS-8N-Lr1" secondAttribute="bottom" id="fGY-Dn-xWH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8mr-I6-eIU" secondAttribute="trailing" constant="467" id="g3F-O4-xxk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="CFS-8N-Lr1" secondAttribute="bottom" constant="-4" id="min-J9-C3s"/>
+                                        <constraint firstItem="gG5-3s-huB" firstAttribute="top" secondItem="CFS-8N-Lr1" secondAttribute="top" id="v9n-xu-moD"/>
+                                        <constraint firstItem="CFS-8N-Lr1" firstAttribute="top" secondItem="njs-SW-nxN" secondAttribute="top" constant="5" id="yK9-dc-rgX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="infoLabel" destination="8mr-I6-eIU" id="dgm-Yj-rUH"/>
+                                    <outlet property="titleLabel" destination="gG5-3s-huB" id="Q0l-U0-TWr"/>
+                                    <outlet property="videoThumb" destination="CFS-8N-Lr1" id="osc-XU-KUG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

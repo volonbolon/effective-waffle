@@ -23,7 +23,7 @@ struct Video {
         let url = NSURL(string: rawDefault["url"] as! String)
         let t = Thumbnail(thumbType:ThumbnailType.Default, url:url!)
         self.thumbs = [t]
-        let resourceId = rawData["resourceId"] as! [String:AnyObject]
+        let resourceId = snippet["resourceId"] as! [String:AnyObject]
         let videoId = resourceId["videoId"] as! String
         self.videoId = videoId
     }
