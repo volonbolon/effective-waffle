@@ -3,7 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Channels Table View Controller-->
@@ -68,7 +70,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mr-I6-eIU">
-                                            <rect key="frame" x="83" y="60" width="42" height="15"/>
+                                            <rect key="frame" x="83" y="60" width="31" height="15"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -84,6 +86,11 @@
                                         <constraint firstItem="gG5-3s-huB" firstAttribute="top" secondItem="CFS-8N-Lr1" secondAttribute="top" id="v9n-xu-moD"/>
                                         <constraint firstItem="CFS-8N-Lr1" firstAttribute="top" secondItem="njs-SW-nxN" secondAttribute="top" constant="5" id="yK9-dc-rgX"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="g3F-O4-xxk"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="infoLabel" destination="8mr-I6-eIU" id="dgm-Yj-rUH"/>
@@ -102,45 +109,84 @@
             </objects>
             <point key="canvasLocation" x="2211" y="-330"/>
         </scene>
-        <!--Second-->
-        <scene sceneID="wg7-f3-ORb">
+        <!--Player-->
+        <scene sceneID="06N-WQ-7D0">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="EffectiveWaffle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gWu-fp-JsX" customClass="PlayersViewController" customModule="EffectiveWaffle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                        <viewControllerLayoutGuide type="top" id="fEn-C0-GF9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kkb-YJ-UiM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                    <view key="view" contentMode="scaleToFill" id="Yp7-w5-TH8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2E-93-IVm">
+                                <rect key="frame" x="0.0" y="172" width="600" height="256"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Da3-mg-wgg" customClass="YouTubePlayerView" customModule="EffectiveWaffle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0N-27-EMU">
+                                        <rect key="frame" x="266" y="226" width="30" height="30"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="play:" destination="gWu-fp-JsX" eventType="touchUpInside" id="18O-Nn-AjZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIi-62-rBm">
+                                        <rect key="frame" x="304" y="226" width="32" height="30"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stop:" destination="gWu-fp-JsX" eventType="touchUpInside" id="7Vt-rC-x3m"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="x0N-27-EMU" firstAttribute="centerY" secondItem="b2E-93-IVm" secondAttribute="centerY" id="15m-hw-0E4"/>
+                                    <constraint firstItem="Da3-mg-wgg" firstAttribute="top" secondItem="b2E-93-IVm" secondAttribute="top" id="8vf-YN-CPW"/>
+                                    <constraint firstAttribute="bottom" secondItem="x0N-27-EMU" secondAttribute="bottom" id="BxB-fX-Ycl"/>
+                                    <constraint firstItem="Da3-mg-wgg" firstAttribute="width" secondItem="b2E-93-IVm" secondAttribute="width" id="PLw-vv-mfk"/>
+                                    <constraint firstItem="Da3-mg-wgg" firstAttribute="centerX" secondItem="b2E-93-IVm" secondAttribute="centerX" id="qJJ-uz-RlT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Da3-mg-wgg" secondAttribute="bottom" constant="30" id="rA1-jv-DPB"/>
+                                    <constraint firstItem="x0N-27-EMU" firstAttribute="trailing" secondItem="b2E-93-IVm" secondAttribute="centerX" constant="-4" id="rso-eF-GIs"/>
+                                    <constraint firstItem="tIi-62-rBm" firstAttribute="leading" secondItem="x0N-27-EMU" secondAttribute="trailing" constant="8" id="uEt-Ne-n4e"/>
+                                    <constraint firstItem="tIi-62-rBm" firstAttribute="centerY" secondItem="x0N-27-EMU" secondAttribute="centerY" id="wU2-46-EKU"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="15m-hw-0E4"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="b2E-93-IVm" firstAttribute="centerX" secondItem="Yp7-w5-TH8" secondAttribute="centerX" id="5kG-0g-kSa"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="b2E-93-IVm" secondAttribute="leading" id="OTG-Nu-JkI"/>
+                            <constraint firstItem="b2E-93-IVm" firstAttribute="centerY" secondItem="Yp7-w5-TH8" secondAttribute="centerY" id="SDa-Gh-FPy"/>
+                            <constraint firstItem="b2E-93-IVm" firstAttribute="width" secondItem="Yp7-w5-TH8" secondAttribute="width" id="UxJ-gh-Ypc"/>
+                            <constraint firstItem="b2E-93-IVm" firstAttribute="height" secondItem="Yp7-w5-TH8" secondAttribute="height" multiplier="1:2" constant="-44" id="f48-NV-un3"/>
+                            <constraint firstItem="b2E-93-IVm" firstAttribute="centerY" secondItem="fEn-C0-GF9" secondAttribute="bottom" id="mcQ-M6-hhP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OTG-Nu-JkI"/>
+                                <exclude reference="mcQ-M6-hhP"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Player" selectedImage="first" id="h7N-Ju-YSR"/>
+                    <connections>
+                        <outlet property="playButton" destination="x0N-27-EMU" id="9EO-cx-OaL"/>
+                        <outlet property="player" destination="Da3-mg-wgg" id="0f7-In-tjT"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goZ-Lx-YZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="260" y="871"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -153,19 +199,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="fXG-Xo-7Na" kind="relationship" relationship="viewControllers" id="eUT-cS-QrQ"/>
+                        <segue destination="gWu-fp-JsX" kind="relationship" relationship="viewControllers" id="pc9-mq-sNu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6" y="-39"/>
         </scene>
-        <!--Item-->
+        <!--Navigation-->
         <scene sceneID="pRy-oo-mGY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fXG-Xo-7Na" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="emt-Hh-JKw"/>
+                    <tabBarItem key="tabBarItem" title="Navigation" selectedImage="second" id="emt-Hh-JKw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T7o-C0-v2O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -182,6 +228,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
