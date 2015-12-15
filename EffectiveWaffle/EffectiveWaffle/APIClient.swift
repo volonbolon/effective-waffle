@@ -61,4 +61,40 @@ extension APIClient {
         }
         task.resume()
     }
+    
+    func getVideos(playlistId:String, completionHandler:(Either<[Video],APIClientError>)->Void) {
+        let urlString = "\(APIClient.rootURL)/playlistItems?part=snippet&playlistId=\(playlistId)&key=\(Constants.APIKey.YouTube)"
+        let url = NSURL(string: urlString)
+        let request = self.requestWithURL(url!)
+        request.HTTPMethod = APIClient.GET
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { (d:NSData?, r:NSURLResponse?, e:NSError?) -> Void in
+            var r:Either<[Video],APIClientError>!
+            if e == nil {
+                do {
+                    let parsedResponse = try NSJSONSerialization.JSONObjectWithData(d!, options: NSJSONReadingOptions.AllowFragments) as! [String:AnyObject]
+                    let rawItems = parsedResponse["items"] as? [[String:AnyObject]]
+                    
+                    if rawItems != nil {
+                        var videos:[Video] = Array()
+                        for i in rawItems! {
+                            let v = Video(rawData: i)
+                            videos.append(v)
+                        }
+                        r = Either.Left(videos)
+                    } else {
+                        r = Either.Right(APIClientError.Parse)
+                    }
+                } catch {
+                    r = Either.Right(APIClientError.Parse)
+                }
+            } else {
+                r = Either.Right(APIClientError.Reachability)
+            }
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                completionHandler(r)
+            })
+        }
+        task.resume()
+    }
 }
