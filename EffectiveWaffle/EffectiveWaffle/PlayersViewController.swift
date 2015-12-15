@@ -12,13 +12,14 @@ class PlayersViewController: UIViewController {
 
     @IBOutlet weak var player: YouTubePlayerView!
     @IBOutlet weak var playButton: UIButton!
+    var videoId:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        player.loadVideoID("bDLyPmx439Y")
+        if self.videoId == nil {
+            self.videoId = "bDLyPmx439Y"
+        }
+        player.loadVideoID(self.videoId)
     }
 
     override func didReceiveMemoryWarning() {

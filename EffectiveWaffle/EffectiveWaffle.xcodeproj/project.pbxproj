@@ -12,7 +12,6 @@
 		B0B3D5AA1C20A3C50019F73E /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3D5A91C20A3C50019F73E /* YouTubePlayer.swift */; };
 		B0B3D5AC1C20A8590019F73E /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3D5AB1C20A8590019F73E /* YouTubePlayerView.swift */; };
 		B0BF117D1C1F518600B69F6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF117C1C1F518600B69F6E /* AppDelegate.swift */; };
-		B0BF11811C1F518600B69F6E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF11801C1F518600B69F6E /* SecondViewController.swift */; };
 		B0BF11841C1F518600B69F6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BF11821C1F518600B69F6E /* Main.storyboard */; };
 		B0BF11861C1F518600B69F6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0BF11851C1F518600B69F6E /* Assets.xcassets */; };
 		B0BF11891C1F518600B69F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BF11871C1F518600B69F6E /* LaunchScreen.storyboard */; };
@@ -53,7 +52,6 @@
 		B0B3D5AB1C20A8590019F73E /* YouTubePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
 		B0BF11791C1F518600B69F6E /* EffectiveWaffle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffectiveWaffle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BF117C1C1F518600B69F6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0BF11801C1F518600B69F6E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B0BF11831C1F518600B69F6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0BF11851C1F518600B69F6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0BF11881C1F518600B69F6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				B0BF117C1C1F518600B69F6E /* AppDelegate.swift */,
-				B0BF11801C1F518600B69F6E /* SecondViewController.swift */,
 				B0BF11821C1F518600B69F6E /* Main.storyboard */,
 				B0BF11851C1F518600B69F6E /* Assets.xcassets */,
 				B0BF11871C1F518600B69F6E /* LaunchScreen.storyboard */,
@@ -302,7 +299,6 @@
 				B0B3D5AC1C20A8590019F73E /* YouTubePlayerView.swift in Sources */,
 				B0BF11B91C1F8A4000B69F6E /* Thumbs.swift in Sources */,
 				B0BF11B11C1F544000B69F6E /* Channel.swift in Sources */,
-				B0BF11811C1F518600B69F6E /* SecondViewController.swift in Sources */,
 				B0B3D5A81C2067360019F73E /* PlayersViewController.swift in Sources */,
 				B0BF117D1C1F518600B69F6E /* AppDelegate.swift in Sources */,
 				B0BF11B81C1F8A2600B69F6E /* Either.swift in Sources */,

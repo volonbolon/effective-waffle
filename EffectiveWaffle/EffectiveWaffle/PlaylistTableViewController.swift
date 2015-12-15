@@ -18,6 +18,7 @@ class PlaylistTableViewController: UITableViewController {
     var channel:Channel!
     private let apiClient = APIClient()
     var videos:[Video] = Array()
+    private var selectedVideo:Video?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,11 @@ class PlaylistTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedVideo = self.videos[indexPath.row]
+        self.performSegueWithIdentifier(Constants.SegueIdentifier.ShowVideoPlayer, sender: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -108,14 +114,13 @@ class PlaylistTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Constants.SegueIdentifier.ShowVideoPlayer {
+            if let v = self.selectedVideo {
+                let destination = segue.destinationViewController as! PlayersViewController
+                destination.videoId = v.videoId
+            }
+        }
     }
-    */
-
 }
