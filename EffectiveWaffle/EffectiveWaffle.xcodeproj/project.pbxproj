@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C77060BC7961B3BEEF80933 /* Pods_EffectiveWaffle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B47F76841DD0F747BFC232 /* Pods_EffectiveWaffle.framework */; };
+		6BC5DB12E0FBD337B0A12793 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA756DDC4DC4036581384DD /* Pods.framework */; };
 		B0B3D5A61C2041610019F73E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B3D5A51C2041610019F73E /* WebKit.framework */; };
 		B0B3D5A81C2067360019F73E /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3D5A71C2067360019F73E /* PlayersViewController.swift */; };
 		B0B3D5AA1C20A3C50019F73E /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3D5A91C20A3C50019F73E /* YouTubePlayer.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BA756DDC4DC4036581384DD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		860636CCD3845F98546BDC93 /* Pods-EffectiveWaffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffectiveWaffle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EffectiveWaffle/Pods-EffectiveWaffle.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B3D5A51C2041610019F73E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B0B3D5A71C2067360019F73E /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		B0B3D5A91C20A3C50019F73E /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
@@ -71,6 +75,9 @@
 		B0BF11BB1C1F8AC800B69F6E /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
 		B0BF11BD1C1F8ED000B69F6E /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		B0BF11C01C1F982300B69F6E /* YouTubePlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YouTubePlayer.html; sourceTree = "<group>"; };
+		B0BF64BD1C2368A1001E8B5D /* EffectiveWaffle-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EffectiveWaffle-Bridging-Header.h"; path = "EffectiveWaffle/EffectiveWaffle-Bridging-Header.h"; sourceTree = "<group>"; };
+		C5B47F76841DD0F747BFC232 /* Pods_EffectiveWaffle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EffectiveWaffle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03A574326895C9C006AE1DD /* Pods-EffectiveWaffle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffectiveWaffle.release.xcconfig"; path = "Pods/Target Support Files/Pods-EffectiveWaffle/Pods-EffectiveWaffle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B3D5A61C2041610019F73E /* WebKit.framework in Frameworks */,
+				2C77060BC7961B3BEEF80933 /* Pods_EffectiveWaffle.framework in Frameworks */,
+				6BC5DB12E0FBD337B0A12793 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,14 +108,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A450DC6D1AED386276338EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5B47F76841DD0F747BFC232 /* Pods_EffectiveWaffle.framework */,
+				6BA756DDC4DC4036581384DD /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		710603D63B80E78F0327416F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				860636CCD3845F98546BDC93 /* Pods-EffectiveWaffle.debug.xcconfig */,
+				E03A574326895C9C006AE1DD /* Pods-EffectiveWaffle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B0BF11701C1F518600B69F6E = {
 			isa = PBXGroup;
 			children = (
+				B0BF64BD1C2368A1001E8B5D /* EffectiveWaffle-Bridging-Header.h */,
 				B0B3D5A51C2041610019F73E /* WebKit.framework */,
 				B0BF117B1C1F518600B69F6E /* EffectiveWaffle */,
 				B0BF11921C1F518600B69F6E /* EffectiveWaffleTests */,
 				B0BF119D1C1F518600B69F6E /* EffectiveWaffleUITests */,
 				B0BF117A1C1F518600B69F6E /* Products */,
+				710603D63B80E78F0327416F /* Pods */,
+				4A450DC6D1AED386276338EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0BF11A31C1F518600B69F6E /* Build configuration list for PBXNativeTarget "EffectiveWaffle" */;
 			buildPhases = (
+				D1AC27B3FF94E7EC5DC063D6 /* Check Pods Manifest.lock */,
 				B0BF11751C1F518600B69F6E /* Sources */,
 				B0BF11761C1F518600B69F6E /* Frameworks */,
 				B0BF11771C1F518600B69F6E /* Resources */,
+				E2243610FBC6AFFF73F6796C /* Embed Pods Frameworks */,
+				C019EE1B8BA20272CB855ECD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,6 +321,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C019EE1B8BA20272CB855ECD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1AC27B3FF94E7EC5DC063D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2243610FBC6AFFF73F6796C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0BF11751C1F518600B69F6E /* Sources */ = {
@@ -445,23 +526,27 @@
 		};
 		B0BF11A41C1F518600B69F6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 860636CCD3845F98546BDC93 /* Pods-EffectiveWaffle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EffectiveWaffle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.volonbolon.EffectiveWaffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EffectiveWaffle/EffectiveWaffle-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		B0BF11A51C1F518600B69F6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E03A574326895C9C006AE1DD /* Pods-EffectiveWaffle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EffectiveWaffle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.volonbolon.EffectiveWaffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EffectiveWaffle/EffectiveWaffle-Bridging-Header.h";
 			};
 			name = Release;
 		};
