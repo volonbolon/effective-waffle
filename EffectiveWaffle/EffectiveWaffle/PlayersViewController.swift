@@ -8,53 +8,64 @@
 
 import UIKit
 
+class PlayerContainer: UIView {
+    let player: YouTubePlayerView!
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.player = YouTubePlayerView(frame: CGRectZero)
+        
+        super.init(coder: aDecoder)
+        
+        self.player.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(self.player)
+        
+        let pwc = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.player, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant: 0.0)
+        self.addConstraint(pwc)
+        
+        let pxc = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.player, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0)
+        self.addConstraint(pxc)
+        
+        let ptc = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.player, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0.0)
+        self.addConstraint(ptc)
+        
+        let pbc = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.player, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 30.0)
+        self.addConstraint(pbc)
+    }
+}
+
 class PlayersViewController: UIViewController {
 
-    @IBOutlet weak var player: YouTubePlayerView!
-    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet var players: [PlayerContainer]!
+    
     var videoId:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.videoId == nil {
-            self.videoId = "bDLyPmx439Y"
+            self.videoId = "lc14Jv1eTUE"
         }
-        player.loadVideoID(self.videoId)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.players.first!.player.loadVideoID(self.videoId)
+        self.players.last!.player.loadVideoID("FgnE25-kvyk")
     }
     
-    private func resetPlayButton() {
-        let playTitle = NSLocalizedString("Play", comment: "Play")
-        self.playButton.setTitle(playTitle, forState: UIControlState.Normal)
-    }
-    
-    @IBAction func play(sender: AnyObject) {
-        if self.player.playerState == YouTubePlayerState.Playing {
-            self.player.pause()
-            self.resetPlayButton()
-        } else {
-            self.player.play()
-            let pauseTitle = NSLocalizedString("Pause", comment: "Pause")
-            self.playButton.setTitle(pauseTitle, forState: UIControlState.Normal)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        for pc in self.players {
+            if pc.player.playerState == YouTubePlayerState.Paused {
+                pc.player.play()
+            }
         }
     }
-
-    @IBAction func stop(sender: AnyObject) {
-        self.resetPlayButton()
-        self.player.stop()
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        for pc in self.players {
+            if pc.player.playerState == YouTubePlayerState.Playing {
+                pc.player.pause()
+            }
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
