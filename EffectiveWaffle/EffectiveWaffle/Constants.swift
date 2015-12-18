@@ -16,4 +16,7 @@ struct Constants {
         static let ShowPlaylist = "ShowPlaylist"
         static let ShowVideoPlayer = "ShowVideoPlayer"
     }
+    struct Notification {
+        static let PlayerStateDidChange = "PlayerStateDidChange"
+    }
 }

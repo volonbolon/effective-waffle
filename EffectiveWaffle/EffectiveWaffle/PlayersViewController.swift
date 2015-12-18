@@ -43,7 +43,7 @@ class PlayerContainer: UIView, YouTubePlayerDelegate {
     }
     
     func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-        
+        NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notification.PlayerStateDidChange, object: self)
     }
     
     func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
@@ -54,6 +54,8 @@ class PlayerContainer: UIView, YouTubePlayerDelegate {
 class PlayersViewController: UIViewController {
 
     @IBOutlet var players: [PlayerContainer]!
+    
+    private var playerStateChangedObserver:NSObjectProtocol!
     
     var videoId:String!
     
@@ -66,6 +68,21 @@ class PlayersViewController: UIViewController {
         self.players.first!.player.loadVideoID(self.videoId)
         self.players.first!.autoplay = true
         self.players.last!.player.loadVideoID("FgnE25-kvyk")
+        
+        self.playerStateChangedObserver = NSNotificationCenter.defaultCenter().addObserverForName(Constants.Notification.PlayerStateDidChange, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { (n:NSNotification) -> Void in
+            let o = n.object as! PlayerContainer
+            for p in self.players {
+                if p.player.playerState == YouTubePlayerState.Playing && p != o {
+                    p.player.stop()
+                }
+            }
+        })
+    }
+    
+    deinit {
+        if let p = playerStateChangedObserver {
+            NSNotificationCenter.defaultCenter().removeObserver(p)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
