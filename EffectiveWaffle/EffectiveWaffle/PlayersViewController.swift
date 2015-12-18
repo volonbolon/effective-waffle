@@ -9,18 +9,34 @@
 import UIKit
 
 class PlayerContainer: UIView, YouTubePlayerDelegate {
-    let player: YouTubePlayerView!
+    let player: YouTubePlayerView
     var autoplay = false
+    let playButton:UIButton
+    let stopButton:UIButton
     
     required init?(coder aDecoder: NSCoder) {
         self.player = YouTubePlayerView(frame: CGRectZero)
+        self.playButton = UIButton(type: UIButtonType.System)
+        self.stopButton = UIButton(type: UIButtonType.System)
         
         super.init(coder: aDecoder)
         
         self.player.translatesAutoresizingMaskIntoConstraints = false
         self.player.delegate = self
         
+        self.playButton.setTitle(NSLocalizedString("Play", comment: "Play"), forState: UIControlState.Normal)
+        self.playButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.playButton.addTarget(self, action: Selector("play"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.stopButton.setTitle(NSLocalizedString("Stop", comment: "Stop"), forState: UIControlState.Normal)
+        self.stopButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.stopButton.addTarget(self, action: Selector("stop"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         self.addSubview(self.player)
+        self.addSubview(self.playButton)
+        self.addSubview(self.stopButton)
         
         let pwc = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.player, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant: 0.0)
         self.addConstraint(pwc)
@@ -33,6 +49,18 @@ class PlayerContainer: UIView, YouTubePlayerDelegate {
         
         let pbc = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.player, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 30.0)
         self.addConstraint(pbc)
+        
+        let pbbc = NSLayoutConstraint(item: self.playButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0.0)
+        self.addConstraint(pbbc)
+        
+        let pbxc = NSLayoutConstraint(item: self.playButton, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: -4.0)
+        self.addConstraint(pbxc)
+        
+        let sbbc = NSLayoutConstraint(item: self.stopButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0.0)
+        self.addConstraint(sbbc)
+        
+        let sbxc = NSLayoutConstraint(item: self.playButton, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.stopButton, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: -8.0)
+        self.addConstraint(sbxc)
     }
     
     // MARK: YouTubePlayerDelegate
@@ -48,6 +76,22 @@ class PlayerContainer: UIView, YouTubePlayerDelegate {
     
     func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
         
+    }
+    
+    func play() {
+        var title:String
+        if self.player.playerState == YouTubePlayerState.Playing {
+            title = NSLocalizedString("Play", comment: "Play")
+            self.player.pause()
+        } else {
+            title = NSLocalizedString("Pause", comment: "Pause")
+            self.player.play()
+        }
+        self.playButton.setTitle(title, forState: UIControlState.Normal)
+    }
+    
+    func stop() {
+        self.player.stop()
     }
 }
 

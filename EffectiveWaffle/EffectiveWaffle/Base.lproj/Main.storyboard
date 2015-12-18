@@ -125,7 +125,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2E-93-IVm" customClass="PlayerContainer" customModule="EffectiveWaffle" customModuleProvider="target">
                                 <rect key="frame" x="60" y="104" width="480" height="256"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="NhO-4V-8Dg"/>
                                     <constraint firstAttribute="width" constant="480" id="bNg-UC-red"/>
@@ -133,7 +133,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-aX-4oU" customClass="PlayerContainer" customModule="EffectiveWaffle" customModuleProvider="target">
                                 <rect key="frame" x="60" y="380" width="480" height="256"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
