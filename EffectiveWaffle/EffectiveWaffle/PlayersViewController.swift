@@ -8,8 +8,9 @@
 
 import UIKit
 
-class PlayerContainer: UIView {
+class PlayerContainer: UIView, YouTubePlayerDelegate {
     let player: YouTubePlayerView!
+    var autoplay = false
     
     required init?(coder aDecoder: NSCoder) {
         self.player = YouTubePlayerView(frame: CGRectZero)
@@ -17,6 +18,7 @@ class PlayerContainer: UIView {
         super.init(coder: aDecoder)
         
         self.player.translatesAutoresizingMaskIntoConstraints = false
+        self.player.delegate = self
         
         self.addSubview(self.player)
         
@@ -31,6 +33,21 @@ class PlayerContainer: UIView {
         
         let pbc = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.player, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 30.0)
         self.addConstraint(pbc)
+    }
+    
+    // MARK: YouTubePlayerDelegate
+    func playerReady(videoPlayer: YouTubePlayerView) {
+        if self.autoplay {
+            self.player.play()
+        }
+    }
+    
+    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        
+    }
+    
+    func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        
     }
 }
 
@@ -47,6 +64,7 @@ class PlayersViewController: UIViewController {
         }
         
         self.players.first!.player.loadVideoID(self.videoId)
+        self.players.first!.autoplay = true
         self.players.last!.player.loadVideoID("FgnE25-kvyk")
     }
     
